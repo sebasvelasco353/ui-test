@@ -3,10 +3,22 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.nav`
-    padding: 20px 50px;
+    padding: 20px 3vw;
+    width: 94vw;
     display: flex;
+    height: 3vh;
     flex-direction: row;
     justify-content: space-between;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+    .brand {
+        font-weight: 900;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: white;
+    }
     ul {
         display: flex;
         flex-direction: row;
@@ -14,6 +26,11 @@ const StyledNavbar = styled.nav`
         margin: 0;
         li {
             margin: 0px 20px;
+            color: white;
+            a{
+                text-decoration: none;
+                color: white;
+            }
         }
     }
 `;
@@ -21,7 +38,7 @@ const StyledNavbar = styled.nav`
 export default function Navbar() {
     return (
         <StyledNavbar>
-            <Link to="/">Rule of Thumb</Link>
+            <Link className="brand" to="/">Rule of Thumb.</Link>
             <ul>
                 <li>
                     <Link to="/PastTrials">PastTrials</Link>
