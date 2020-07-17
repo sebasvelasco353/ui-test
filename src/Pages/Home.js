@@ -4,6 +4,9 @@ import styled from 'styled-components';
 // imgs
 import pope from "../assets/images/pope.jpg";
 
+// components
+import IntroVote from "../Components/IntroVote"
+
 const StyledHome = styled.div`
     display: flex;
     align-items: stretch;
@@ -15,16 +18,16 @@ const StyledHome = styled.div`
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        ::before {
-            content:"";
-            display: block;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0) );
-        }
+        // ::before {
+        //     content:"";
+        //     display: block;
+        //     height: 100%;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0) );
+        // }
     }
 `;
 
@@ -42,7 +45,9 @@ export default class Home extends Component {
     render() {
         return (
             <StyledHome>
-                <div className="introSection"></div>
+                <div className="introSection">
+                    <IntroVote className="introVote" />
+                </div>
             </StyledHome>
         )
     }
