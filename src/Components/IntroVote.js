@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
-export default function IntroVote() {
+export default function IntroVote({handleVoteClick, candidate}) {
     const StyledVoteBooth = styled.div`
         display: flex;
         flex-direction: column;
@@ -44,6 +44,7 @@ export default function IntroVote() {
                     height: 100px;
                     width: 50%;
                     color: white;
+                    cursor: pointer;
                 }
                 .upVote {
                     background-color: rgba(92, 184, 178, 0.8);
@@ -91,10 +92,10 @@ export default function IntroVote() {
             </div>
             <div className="veredict">
                 <div className="buttons">
-                    <button className="upVote">
+                    <button className="upVote" onClick={() => handleVoteClick(candidate, true)}>
                         <FontAwesomeIcon className="fas fa-5x" icon={faThumbsUp} />
                     </button>
-                    <button className="downVote">
+                    <button className="downVote" onClick={() => handleVoteClick(candidate, false)}>
                         <FontAwesomeIcon className="fas fa-5x" icon={faThumbsDown} />
                     </button>
                 </div>
