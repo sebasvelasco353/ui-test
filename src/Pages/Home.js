@@ -4,25 +4,53 @@ import styled from 'styled-components';
 import pope from "../assets/images/pope.jpg";
 // components
 import IntroVote from "../Components/IntroVote"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
 const StyledPope = styled.div`
     .introSection {
         position: relative;
-        flex: 1;
-        width: 100vw;
-        height: 95vh;
+        height: 100vh;
         background-image: url(${pope});
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        .remainingDays {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 50px;
+            bottom: 0px;
+            width: 100%;
+        }
     }
-    .remainingDays {
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.2);
-        height: 50px;
-        bottom: 0px;
-        width: 100%;
+    .candidatesSection{
+        padding: 90px 7vw;
+        .speakOut{
+            padding: 15px 30px;
+            height: 90px;
+            background-color: rgb(235, 235, 235);
+            display: flex;
+            flex-direction: row;
+            .left {
+                width: 20%;
+                font-size: 1.4rem;
+                b{
+                    font-size: 2.4rem;
+                }
+            }
+            .center {
+                width: 77%;
+                font-size: 1.6rem;
+            }
+            .right {
+                width: 3%;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: right;
+            }
+        }
     }
+
 `;
 
 export default class Home extends Component {
@@ -66,12 +94,30 @@ export default class Home extends Component {
     render() {
         return (
             <StyledPope>
-                <div className="introSection">
+                <section className="introSection">
                     <IntroVote className="introVote" handleVoteClick={this.handleVoteClick.bind(this)} candidate="pope" />
                     <div className="remainingDays">
                         <p>Closing in <span>22 Days</span></p>
                     </div>
-                </div>
+                </section>
+                <section className="candidatesSection">
+                    <div className="speakOut">
+                        <div className="left">
+                            <span>
+                                Speak out. Be heard
+                            </span>
+                            <br/>
+                            <b>Be counted</b>
+                        </div>
+                        <div className="center">
+                            <span>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. Its easy: You share your opinion, we analyze and put the data in a public report.</span>
+                        </div>
+                        <div className="right">
+                            {/* <FontAwesomeIcon className="fas fa-md" icon={faWindowClose} /> */}
+                            X
+                        </div>
+                    </div>
+                </section>
             </StyledPope>
         )
     }

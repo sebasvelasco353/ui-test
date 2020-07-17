@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const StyledNavbar = styled.nav`
-    padding: 20px 3vw;
-    width: 94vw;
+    padding: 20px 7vw;
+    width: 86vw;
     display: flex;
     height: 5vh;
     flex-direction: row;
@@ -50,6 +50,9 @@ const StyledNavbar = styled.nav`
                 cursor: pointer;
             }
         }
+    }
+    @media screen and (max-width: 800px){
+        flex-wrap: wrap;
     }
 `;
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
-export default function IntroVote({handleVoteClick, candidate}) {
+export default function VotingBooth({handleVoteClick, candidate}) {
     const StyledVoteBooth = styled.div`
         display: flex;
         flex-direction: column;
