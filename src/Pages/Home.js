@@ -7,27 +7,23 @@ import pope from "../assets/images/pope.jpg";
 // components
 import IntroVote from "../Components/IntroVote"
 
-const StyledHome = styled.div`
-    display: flex;
-    align-items: stretch;
+const StyledPope = styled.div`
     .introSection {
+        position: relative;
         flex: 1;
         width: 100vw;
-        height: 100vh;
+        height: 95vh;
         background-image: url(${pope});
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        // ::before {
-        //     content:"";
-        //     display: block;
-        //     height: 100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0) );
-        // }
+    }
+    .remainingDays {
+        position: absolute;
+        background-color:red;
+        height: 50px;
+        bottom: 0px;
+        width: 100%;
     }
 `;
 
@@ -44,11 +40,14 @@ export default class Home extends Component {
     }
     render() {
         return (
-            <StyledHome>
+            <StyledPope>
                 <div className="introSection">
                     <IntroVote className="introVote" />
+                    <div className="remainingDays">
+                        <p>Closing in <span>22 Days</span></p>
+                    </div>
                 </div>
-            </StyledHome>
+            </StyledPope>
         )
     }
 }

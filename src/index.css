@@ -6,3 +6,6 @@ body {
 
   font-size: 10px;
 }
+body * {
+  border: 1px red solid;
+}
