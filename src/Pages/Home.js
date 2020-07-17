@@ -23,7 +23,7 @@ const StyledHome = styled.div`
             top: 0;
             left: 0;
             width: 100%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0) );
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0) );
         }
     }
 `;
