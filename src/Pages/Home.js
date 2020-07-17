@@ -9,8 +9,8 @@ const StyledHome = styled.div`
     align-items: stretch;
     .introSection {
         flex: 1;
-        width: 100%;
-        height: 93vh;
+        width: 100vw;
+        height: 100vh;
         background-image: url(${pope});
         background-position: center;
         background-repeat: no-repeat;

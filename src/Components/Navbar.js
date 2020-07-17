@@ -12,7 +12,6 @@ const StyledNavbar = styled.nav`
     height: 5vh;
     flex-direction: row;
     justify-content: space-between;
-    font-family: 'Lato', sans-serif;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0));
     position: absolute;
     top: 0;
