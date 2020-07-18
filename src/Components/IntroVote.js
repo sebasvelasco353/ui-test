@@ -14,7 +14,6 @@ export default function IntroVote({handleVoteClick, candidate}) {
         .IntroVote_content{
             padding: 3rem;
             width: 550px;
-            // height: 350px;
             height: 100%;
             backdrop-filter: blur(0.8);
             background-color: rgba( 0, 0, 0, 0.3);

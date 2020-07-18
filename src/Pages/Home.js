@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 // imgs
 import pope from "../assets/images/pope.jpg";
+import kanye from "../assets/images/kanye.jpg";
+import mark from "../assets/images/mark.jpg";
+import cristina from "../assets/images/cristina.jpg";
+import malala from "../assets/images/malala.jpg";
+
 // components
 import IntroVote from "../Components/IntroVote"
 import VotingBooth from '../Components/VotingBooth';
@@ -63,8 +68,8 @@ export default class Home extends Component {
         this.state = {
             pope: 0,
             popeTrue: 0,
-            kanye: 0,
-            kanyeTrue: 0,
+            kanye: 10,
+            kanyeTrue: 3,
             mark: 0,
             markTrue: 0,
             cristina: 0,
@@ -74,7 +79,7 @@ export default class Home extends Component {
         }
     }
     handleVoteClick(candidate, vote){
-        console.log(candidate, " ", vote)
+        console.log(candidate, " ", vote);
         switch (candidate) {
             case "pope":
                 (vote === true) ? this.setState({pope: this.state.pope + 1, popeTrue: this.state.popeTrue + 1}) : this.setState({pope: this.state.pope + 1});
@@ -96,9 +101,42 @@ export default class Home extends Component {
         }
     }
     renderVotingBooth = () => {
-        const booths = [0,1,2,3];
-        return booths.map((booth) =>
-         <VotingBooth key={booth}/>
+        const candidates = [
+            {
+                candidate: "Kanye West",
+                since: new Date(),
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit a leo finibus dictum.",
+                totalVotes: this.state.kanye,
+                upVotes: this.state.kanyeTrue,
+                img: kanye
+            },
+            {
+                candidate: "Mark Zuckerberg",
+                since: new Date(),
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit a leo finibus dictum.",
+                totalVotes: this.state.mark,
+                upVotes: this.state.markTrue,
+                img: mark
+            },
+            {
+                candidate: "Cristina Fernandez de Kirchner",
+                since: new Date(),
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit a leo finibus dictum.",
+                totalVotes: this.state.cristina,
+                upVotes: this.state.cristinaTrue,
+                img: cristina
+            },
+            {
+                candidate: "Malala Yousafzai",
+                since: new Date(),
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit a leo finibus dictum.",
+                totalVotes: this.state.malala,
+                upVotes: this.state.malalaTrue,
+                img: malala
+            }
+        ];
+        return candidates.map((candidate) =>
+            <VotingBooth candidate={candidate} handleVoteClick={this.handleVoteClick.bind(this)} key={candidate.candidate}/>
         );
     }
     render() {
