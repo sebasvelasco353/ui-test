@@ -29,6 +29,9 @@ const StyledHome = styled.div`
     }
     .candidatesSection{
         padding: 90px 7vw;
+        .votesTitle{
+            font-size: 3rem;
+        }
         .speakOut{
             padding: 15px 30px;
             height: 90px;
@@ -167,6 +170,7 @@ export default class Home extends Component {
                             X
                         </div>
                     </div>
+                    <p className="votesTitle">Votes</p>
                     <div className="votingBoothSection">
                         {this.renderVotingBooth()}
                     </div>

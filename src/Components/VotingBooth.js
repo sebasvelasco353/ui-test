@@ -27,12 +27,10 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
             .statusRow{
                 display: flex;
                 flex-direction: row;
-                width: 100%;
-                font-size: 1rem;
-
-                display: flex;
                 justify-content: left;
                 align-items: center;
+                width: 100%;
+                font-size: 1rem;
                 .voteStatus {
                     width: 40px;
                     height: 40px;
@@ -46,6 +44,13 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
             .time {
                 color: white;
                 font-size: 1rem;
+                padding-left: 60px;
+            }
+            .description{
+                color: white;
+                font-size: 1rem;
+                margin: 0;
+                padding: 0px 60px;
             }
         }
         .veredict{
@@ -93,6 +98,7 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
                 <br/>
                 {/* TODO: agregar locale para meses correctos */}
                 <p className="time"> <b>{Math.ceil(((((new Date() - candidate.since)/1000)/60/60)/24)/30)} Months ago</b> in <b>{candidate.category}</b></p>
+                <p className="description">{candidate.description}</p>
             </div>
             <div className="veredict">
                 <div className="buttons">
