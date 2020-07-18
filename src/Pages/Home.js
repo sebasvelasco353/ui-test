@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import pope from "../assets/images/pope.jpg";
 // components
 import IntroVote from "../Components/IntroVote"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import VotingBooth from '../Components/VotingBooth';
 
 const StyledPope = styled.div`
     .introSection {
@@ -49,6 +48,11 @@ const StyledPope = styled.div`
                 text-align: right;
             }
         }
+        .votingBoothSection{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 
 `;
@@ -91,6 +95,12 @@ export default class Home extends Component {
                 break;
         }
     }
+    renderVotingBooth = () => {
+        const booths = [0,1,2,3];
+        return booths.map((booth) =>
+         <VotingBooth key={booth}/>
+        );
+    }
     render() {
         return (
             <StyledPope>
@@ -113,9 +123,11 @@ export default class Home extends Component {
                             <span>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. Its easy: You share your opinion, we analyze and put the data in a public report.</span>
                         </div>
                         <div className="right">
-                            {/* <FontAwesomeIcon className="fas fa-md" icon={faWindowClose} /> */}
                             X
                         </div>
+                    </div>
+                    <div className="votingBoothSection">
+                        {this.renderVotingBooth()}
                     </div>
                 </section>
             </StyledPope>
