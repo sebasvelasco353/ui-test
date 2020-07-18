@@ -60,6 +60,7 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
                     height: 50px;
                     border: none;
                     color: white;
+                    font-size: 1.3rem;
                 }
                 span {
                     margin: 0 10px;
@@ -71,6 +72,7 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
                     width: ${candidate.totalVotes !== 0 ? ((candidate.upVotes / candidate.totalVotes) * 100) : 50}%;
                     min-width: 20%;
                     max-width: 80%;
+                    text-align: left;
                 }
                 .downVote {
                     background-color: rgba(245, 183, 80, 0.8);
@@ -78,6 +80,7 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
                     width: ${candidate.totalVotes !== 0 ? (100 - ((candidate.upVotes / candidate.totalVotes) * 100)) : 50}%;
                     min-width: 20%;
                     max-width: 80%;
+                    text-align: right;
                 }
             }
         }
@@ -102,12 +105,12 @@ export default function VotingBooth({handleVoteClick, candidate, index}) {
             </div>
             <div className="veredict">
                 <div className="buttons">
-                    <button className="upVote" onClick={() => handleVoteClick(candidate.candidate, true)}>
+                    <button disabled className="upVote" onClick={() => handleVoteClick(candidate.candidate, true)}>
                         <FontAwesomeIcon className="fas fa-lg" icon={faThumbsUp} />
-                        <span>{((candidate.upVotes / candidate.totalVotes) * 100)}%</span>
+                        <span>{candidate.totalVotes != 0 ? ((candidate.upVotes / candidate.totalVotes) * 100) : 0 }%</span>
                     </button>
-                    <button className="downVote" onClick={() => handleVoteClick(candidate.candidate, false)}>
-                        <span>{(100 - ((candidate.upVotes / candidate.totalVotes) * 100))}%</span>
+                    <button disabled className="downVote" onClick={() => handleVoteClick(candidate.candidate, false)}>
+                        <span>{candidate.totalVotes != 0 ? (100 - ((candidate.upVotes / candidate.totalVotes) * 100)) : 0 }%</span>
                         <FontAwesomeIcon className="fas fa-lg" icon={faThumbsDown} />
                     </button>
                 </div>
