@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const StyledNavbar = styled.nav`
     padding: 20px 7vw;
-    width: 86vw;
+    width: 85vw;
     display: flex;
     height: 5vh;
     flex-direction: row;
